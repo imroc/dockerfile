@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-IMAGE := cr.imroc.cc/library/ubuntu:latest
+IMAGE := cr.imroc.cc/library/ubuntu:test
 
 .PHONY: build
 build:

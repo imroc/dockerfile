@@ -1,3 +1,3 @@
-FROM cr.imroc.cc/library/wget:latest
-RUN wget -q -O - https://git.io/vQhTU | bash
-ENV PATH="/root/.go/bin:${PATH}"
+FROM cr.imroc.cc/library/build-tools:latest
+RUN cd /tmp && wget https://golang.org/dl/go1.16.5.linux-amd64.tar.gz && tar -zxvf go1.16.5.linux-amd64.tar.gz && mv go /usr/local/
+ENV PATH="/usr/local/go/bin:${PATH}"
