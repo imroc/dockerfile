@@ -7,4 +7,4 @@ do
     tags+="-t $tag "
 done
 
-docker build $tags .
+docker buildx build --platform=linux/amd64 $tags .

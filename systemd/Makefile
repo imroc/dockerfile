@@ -3,7 +3,7 @@ IMAGE := cr.imroc.cc/library/systemd:latest
 
 .PHONY: build
 build:
-	docker build . -t $(IMAGE)
+	docker buildx build --platform=linux/amd64 . -t $(IMAGE)
 
 .PHONY: push
 push:
