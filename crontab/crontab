@@ -1,0 +1,1 @@
+* * * * * echo "Crontab is working" > /proc/1/fd/1

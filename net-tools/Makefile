@@ -1,5 +1,8 @@
 SHELL := /bin/bash
-IMAGE := cr.imroc.cc/library/net-tools:latest
+IMAGE := registry.imroc.cc/library/net-tools:latest
+
+.PHONY: all
+all: build push
 
 .PHONY: build
 build:

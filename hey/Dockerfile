@@ -1,6 +1,6 @@
-FROM cr.imroc.cc/library/golang:latest as builder
-RUN go get github.com/rakyll/hey
+FROM registry.imroc.cc/library/build-tools:latest as builder
+RUN go install github.com/rakyll/hey@latest
 
-FROM cr.imroc.cc/library/net-tools:latest
+FROM registry.imroc.cc/library/net-tools:latest
 COPY --from=builder /root/go/bin/hey /usr/local/bin/hey
 CMD ["sleep", "infinity"]

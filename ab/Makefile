@@ -1,5 +1,8 @@
 SHELL := /bin/bash
-IMAGE := cr.imroc.cc/library/grpc_cli:latest
+IMAGE := registry.imroc.cc/library/ab:latest
+
+.PHONY: all
+all: build push
 
 .PHONY: build
 build:

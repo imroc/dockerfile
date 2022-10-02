@@ -1,9 +1,9 @@
 SHELL := /bin/bash
-IMAGE := cr.imroc.cc/library/nginx-reload:latest
+IMAGE := registry.imroc.cc/library/nginx-reload:latest
 
 .PHONY: build
 build:
-	docker build . -t $(IMAGE)
+	docker buildx build --platform=linux/amd64 --push . -t $(IMAGE)
 
 .PHONY: push
 push:

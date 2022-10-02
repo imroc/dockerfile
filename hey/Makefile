@@ -1,5 +1,8 @@
 SHELL := /bin/bash
-IMAGE := cr.imroc.cc/library/hey:latest
+IMAGE := registry.imroc.cc/library/hey:latest
+
+.PHONY: all
+all: build push
 
 .PHONY: build
 build:

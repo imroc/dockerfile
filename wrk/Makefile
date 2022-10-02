@@ -1,9 +1,12 @@
 SHELL := /bin/bash
-IMAGE := cr.imroc.cc/library/wrk:latest
+IMAGE := registry.imroc.cc/library/wrk:latest
+
+.PHONY: all
+all: build push
 
 .PHONY: build
 build:
-	docker build . --no-cache -t $(IMAGE)
+	docker build . -t $(IMAGE)
 
 .PHONY: push
 push:

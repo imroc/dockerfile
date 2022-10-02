@@ -1,5 +1,8 @@
 SHELL := /bin/bash
-IMAGE := cr.imroc.cc/library/fortio:latest
+IMAGE := registry.imroc.cc/library/fortio:latest
+
+.PHONY: all
+all: build push
 
 .PHONY: build
 build:
