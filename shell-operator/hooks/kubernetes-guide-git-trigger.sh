@@ -13,7 +13,6 @@ if [[ $1 == "--config" ]] ; then
 }
 EOF
 else
-  tkn task ls -A
   if [ ! -d "/kubernetes-guide" ]; then
     cd / && git clone --depth=1 https://github.com/imroc/kubernetes-guide.git
   fi
