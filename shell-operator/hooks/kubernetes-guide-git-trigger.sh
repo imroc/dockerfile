@@ -23,5 +23,5 @@ else
     exit 0
   fi
   echo "new commit detected, start task to rebuild book"
-  tkn task start mdbook-build-push -n -p tekton-pipelines srcRepo="https://github.com/imroc/kubernetes-guide.git" -p destRepo="https://gitee.com/imroc/kubernetes-guide-book.git" --use-param-defaults
+  tkn task start mdbook-build-push -n -p tekton-pipelines srcRepo="https://github.com/imroc/kubernetes-guide.git" -p destRepo="https://gitee.com/imroc/kubernetes-guide-book.git" -s shell-operator --use-param-defaults
 fi
