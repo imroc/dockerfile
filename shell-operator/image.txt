@@ -1,0 +1,1 @@
+registry.imroc.cc/library/shell-operator:latest
