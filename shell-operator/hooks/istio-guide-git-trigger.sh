@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-/hooks/common/git-mdbook-trigger.sh "$1" istio-guide
+arg=${1:-x}
+
+/hooks/common/git-mdbook-trigger.sh "$arg" istio-guide
