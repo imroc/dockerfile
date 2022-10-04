@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
-arg=${1:-x}
+source /hooks/common/git-mdbook-trigger.sh
 
-/hooks/common/git-mdbook-trigger.sh "$arg" kubernetes-guide
+hook::trigger() {
+  common::run_check kubernetes-guide
+}
+
+common::run_hook "$@"
