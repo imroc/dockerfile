@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-/hooks/common/git-mdbook-trigger.sh kubernetes-guide
+/hooks/common/git-mdbook-trigger.sh "$1" kubernetes-guide
