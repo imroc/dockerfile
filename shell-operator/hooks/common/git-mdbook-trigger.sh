@@ -1,5 +1,3 @@
-set -ex
-
 common::run_hook() {
   if [[ $1 == "--config" ]] ; then
     cat <<EOF
@@ -27,6 +25,10 @@ common::run_check() {
   if [ "$isLatest" ]; then
     echo "no new commit"
     exit 0
+  fi
+  if [ "$?" != 0 ]; then
+    echo "git pull exited with code $?"
+    exit $?
   fi
   echo "new commit detected, start task to rebuild book"
   tkn task start mdbook-build-push -n tekton-pipelines -p srcRepo="https://github.com/imroc/$1.git" -p destRepo="https://gitee.com/imroc/$1-book.git" -s gitee-imroc --use-param-defaults
