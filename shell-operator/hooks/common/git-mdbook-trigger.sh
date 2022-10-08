@@ -1,3 +1,5 @@
+set -ex
+
 common::run_hook() {
   if [[ $1 == "--config" ]] ; then
     cat <<EOF
