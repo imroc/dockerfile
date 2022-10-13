@@ -1,6 +1,7 @@
-common::run_hook() {
-  if [[ $1 == "--config" ]] ; then
-    cat <<EOF
+#!/usr/bin/env bash
+
+if [[ $1 == "--config" ]] ; then
+  cat <<EOF
 {
   "configVersion":"v1",
   "schedule": [
@@ -11,12 +12,11 @@ common::run_hook() {
   ]
 }
 EOF
-  else
-    hook::trigger
-  fi
-}
+  exit 0
+fi
 
-common::run_check() {
+
+run_check() {
   if [ ! -d "/$1" ]; then
     cd / && git clone --depth=1 "https://github.com/imroc/$1.git"
   fi
@@ -26,10 +26,13 @@ common::run_check() {
     echo "no new commit"
     exit 0
   fi
-  if [ "$?" != 0 ]; then
-    echo "git pull exited with code $?"
-    exit $?
-  fi
   echo "new commit detected, start task to rebuild book"
   tkn task start mdbook-build-push -n tekton-pipelines -p srcRepo="https://github.com/imroc/$1.git" -p destRepo="https://gitee.com/imroc/$1-book.git" -s gitee-imroc --use-param-defaults
 }
+
+repos=("istio-guide" "kubernetes-guide" "learning-linux")
+
+for repo in ${repos[@]}
+do
+  run_check $repo
+done
