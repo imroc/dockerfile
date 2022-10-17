@@ -21,12 +21,14 @@ run_check() {
     cd / && git clone --depth=1 "https://github.com/imroc/$1.git"
   fi
   cd "/$1"
-  isLatest=`git pull 2>&1 | grep 'Already up to date'`
+  pullResult=`git pull 2>&1`
+  isLatest=`echo $pullResult | grep 'Already up to date'`
   if [ "$isLatest" ]; then
     echo "no new commit"
     exit 0
   fi
   echo "new commit detected, start task to rebuild book"
+  echo $pullResult >> /tmp/pull_result.log
   tkn task start mdbook-build-push -n tekton-pipelines -p srcRepo="https://github.com/imroc/$1.git" -p destRepo="https://gitee.com/imroc/$1-book.git" -s gitee-imroc --use-param-defaults
 }
 
