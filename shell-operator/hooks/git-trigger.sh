@@ -24,11 +24,11 @@ run_check() {
   pullResult=`git pull 2>&1`
   if [[ $? != 0 ]]; then
     echo $pullResult
-    exit $?
+    return
   fi
   if [[ $pullResult =~ "Already up to date" ]]; then
     echo "no new commit"
-    exit 0
+    return
   fi
   echo "new commit detected, start task to rebuild book"
   echo $pullResult >> /tmp/pull_result.log
