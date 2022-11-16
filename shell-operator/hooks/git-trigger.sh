@@ -22,8 +22,11 @@ run_check() {
   fi
   cd "/$1"
   pullResult=`git pull 2>&1`
-  isLatest=`echo $pullResult | grep 'Already up to date'`
-  if [ "$isLatest" ]; then
+  if [[ $? != 0 ]]; then
+    echo $pullResult
+    exit $?
+  fi
+  if [[ $pullResult =~ "Already up to date" ]]; then
     echo "no new commit"
     exit 0
   fi
