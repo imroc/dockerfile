@@ -12,5 +12,6 @@ RUN go install github.com/bazelbuild/bazelisk@latest && cp /root/go/bin/bazelisk
 RUN go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
 RUN go install github.com/rakyll/hey@latest
 RUN go install fortio.org/fortio@latest
+RUN go install github.com/grafana/k6@latest
 ENV PATH="$PATH:/root/go/bin"
 CMD ["sleep", "infinity"]
