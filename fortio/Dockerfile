@@ -1,4 +1,4 @@
-FROM registry.imroc.cc/library/build-tools:latest as builder
+FROM golang:latest as builder
 RUN go install fortio.org/fortio@latest
 
 FROM registry.imroc.cc/library/net-tools:latest

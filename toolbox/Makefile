@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-IMAGE := registry.imroc.cc/library/net-tools:latest
+IMAGE := imroc/toolbox:latest
 
 .PHONY: all
 all: build push
