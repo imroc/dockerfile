@@ -6,5 +6,3 @@ RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["dumb-init", "--"]
 CMD ["/entrypoint.sh"]
-
-
