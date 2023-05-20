@@ -1,4 +1,5 @@
 FROM docker.io/golang:latest as builder
+WORKDIR /tmp
 RUN go install github.com/oauth2-proxy/oauth2-proxy
 
 FROM docker.io/ubuntu:latest
