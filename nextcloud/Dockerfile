@@ -6,6 +6,8 @@ RUN set -ex; \
     apt-get install -y --no-install-recommends \
         sudo \
         tmux \
+        libreoffice-java-common \
+        openjdk-17-jre \
         ffmpeg \
         imagemagick \
         ghostscript \
