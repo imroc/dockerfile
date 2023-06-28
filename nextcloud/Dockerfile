@@ -4,6 +4,8 @@ RUN set -ex; \
     \
     apt-get update; \
     apt-get install -y --no-install-recommends \
+        sudo \
+        tmux \
         ffmpeg \
         imagemagick \
         ghostscript \
