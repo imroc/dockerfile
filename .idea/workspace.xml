@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4441ada1-a665-4745-90fa-4a8b32feb776" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/golang/1.20.5/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kiali/debug/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +37,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "go.import.settings.migrated": "true",
-    "last_opened_file_path": "/Users/roc/dev/dockerfile/golang/1.20.5",
+    "last_opened_file_path": "/Users/roc/dev/dockerfile",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -46,6 +46,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/golang/1.20.5" />
       <recent name="$PROJECT_DIR$/mysql/5.7" />
     </key>
@@ -65,7 +66,7 @@
       <workItem from="1688024889287" duration="598000" />
       <workItem from="1688027923309" duration="598000" />
       <workItem from="1688105207395" duration="2297000" />
-      <workItem from="1688377552658" duration="79000" />
+      <workItem from="1688377552658" duration="967000" />
     </task>
     <servers />
   </component>
