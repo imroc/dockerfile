@@ -4,7 +4,7 @@ ENV PATH="$PATH:/opt/go/bin:/go/bin"
 
 RUN microdnf install tar gzip
 
-RUN GOROOT=/opt/go GOPATH=/go curl -L https://git.io/vQhTU | bash -s -- --version 1.20.5
+RUN curl -L https://git.io/vQhTU | GOROOT=/opt/go GOPATH=/go bash -s -- --version 1.20.5
 
 RUN go install github.com/go-delve/delve/cmd/dlv@latest
 
