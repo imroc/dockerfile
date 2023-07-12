@@ -5,6 +5,8 @@ set -u
 dir=${DIR}
 interval=${PULL_INTERVAL-10s}
 
+git config --global --add safe.directory $dir
+
 cd $dir
 
 while true
