@@ -1,13 +1,17 @@
 #!/bin/bash
 
+set -x
+
 dir=${DIR}
 interval=${PULL_INTERVAL-10s}
 webhook_method=${WEBHOOK_METHOD-GET}
 webhook_url=${WEBHOOK_URL-""}
+webhook_username=${WEBHOOK_USERNAME-""}
+webhook_password=${WEBHOOK_PASSWORD-""}
 
 u=""
-if [ "$WEBHOOK_USERNAME" != "" ] && [ "$WEBHOOK_PASSWORD" != "" ]; then
-   u="-u $WEBHOOK_USERNAME:$WEBHOOK_PASSWORD"
+if [ "webhook_username" != "" ] && [ "webhook_password" != "" ]; then
+   u="-u webhook_username:webhook_password"
 fi
 
 git config --global --add safe.directory $dir
