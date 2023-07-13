@@ -21,7 +21,8 @@ do
       git pull
       if ["$HOOK_COMMAND" != ""]; then
         echo "exec hook command"
-        eval "$HOOK_COMMAND"
+        echo $HOOK_COMMAND
+        eval $HOOK_COMMAND
       fi
     fi
 done
