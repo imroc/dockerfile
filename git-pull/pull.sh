@@ -4,6 +4,12 @@ set -u
 
 dir=${DIR}
 interval=${PULL_INTERVAL-10s}
+webhook_method=${WEBHOOK_METHOD-GET}
+
+u=""
+if [ "$WEBHOOK_USERNAME" != "" ] && [ "$WEBHOOK_PASSWORD" != "" ]; then
+   u="-u $WEBHOOK_USERNAME:$WEBHOOK_PASSWORD"
+fi
 
 git config --global --add safe.directory $dir
 
@@ -19,11 +25,8 @@ do
     if [ "$HEADHASH" != "$UPSTREAMHASH" ]; then
       echo "pulling..."
       git pull
-      echo "hook command: $HOOK_COMMAND"
-      if ["$HOOK_COMMAND" != ""]; then
-        echo "exec hook command"
-        echo $HOOK_COMMAND
-        bash -c "$HOOK_COMMAND"
+      if ["$WEBHOOK_URL" != ""]; then
+        curl -v -X${webhook_method} $u $WEBHOOK_URL
       fi
     fi
 done
