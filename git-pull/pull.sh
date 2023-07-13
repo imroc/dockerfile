@@ -23,8 +23,8 @@ do
     if [ "$HEADHASH" != "$UPSTREAMHASH" ]; then
       echo "pulling..."
       git pull
-      if ["$WEBHOOK_URL" != ""]; then
-        curl -v -X${webhook_method} $u $WEBHOOK_URL
+      if ["${WEBHOOK_URL}" != ""]; then
+        curl -v -X${webhook_method} $u ${WEBHOOK_URL}
       fi
     fi
 done
