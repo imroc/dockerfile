@@ -11,7 +11,7 @@ webhook_password=${WEBHOOK_PASSWORD-""}
 
 u=""
 if [ "webhook_username" != "" ] && [ "webhook_password" != "" ]; then
-   u="-u webhook_username:webhook_password"
+   u="-u $webhook_username:$webhook_password"
 fi
 
 git config --global --add safe.directory $dir
