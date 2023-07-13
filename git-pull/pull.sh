@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -u
-
 dir=${DIR}
 interval=${PULL_INTERVAL-10s}
 webhook_method=${WEBHOOK_METHOD-GET}
