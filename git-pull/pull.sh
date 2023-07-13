@@ -3,6 +3,7 @@
 dir=${DIR}
 interval=${PULL_INTERVAL-10s}
 webhook_method=${WEBHOOK_METHOD-GET}
+webhook_url=${WEBHOOK_URL-""}
 
 u=""
 if [ "$WEBHOOK_USERNAME" != "" ] && [ "$WEBHOOK_PASSWORD" != "" ]; then
@@ -23,8 +24,8 @@ do
     if [ "$HEADHASH" != "$UPSTREAMHASH" ]; then
       echo "pulling..."
       git pull
-      if ["${WEBHOOK_URL}" != ""]; then
-        curl -v -X${webhook_method} $u ${WEBHOOK_URL}
+      if [ "$webhook_url" != "" ]; then
+        curl -v -X${webhook_method} $u $webhook_url
       fi
     fi
 done
