@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -x
-
 dir=${DIR}
 interval=${PULL_INTERVAL-10s}
 webhook_method=${WEBHOOK_METHOD-GET}
@@ -21,7 +19,6 @@ cd $dir
 while true
 do
     sleep $interval
-    echo "$(date -R)"
     git fetch
     HEADHASH=$(git rev-parse HEAD)
     UPSTREAMHASH=$(git rev-parse @{upstream})
@@ -29,6 +26,7 @@ do
       echo "pulling..."
       git pull
       if [ "$webhook_url" != "" ]; then
+        echo "exec webhook"
         curl -v -X${webhook_method} $u $webhook_url
       fi
     fi
