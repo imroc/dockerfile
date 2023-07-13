@@ -22,7 +22,7 @@ do
       if ["$HOOK_COMMAND" != ""]; then
         echo "exec hook command"
         echo $HOOK_COMMAND
-        eval $HOOK_COMMAND
+        bash -c $HOOK_COMMAND
       fi
     fi
 done
