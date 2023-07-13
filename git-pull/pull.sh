@@ -19,6 +19,7 @@ do
     if [ "$HEADHASH" != "$UPSTREAMHASH" ]; then
       echo "pulling..."
       git pull
+      echo "hook command: $HOOK_COMMAND"
       if ["$HOOK_COMMAND" != ""]; then
         echo "exec hook command"
         echo $HOOK_COMMAND
