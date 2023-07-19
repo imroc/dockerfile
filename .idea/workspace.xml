@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4441ada1-a665-4745-90fa-4a8b32feb776" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/warp/reconnect.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/warp/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/warp/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +74,7 @@
       <workItem from="1688627422116" duration="183000" />
       <workItem from="1688628166688" duration="2059000" />
       <workItem from="1689160146957" duration="10219000" />
-      <workItem from="1689753263998" duration="4540000" />
+      <workItem from="1689753263998" duration="6114000" />
     </task>
     <servers />
   </component>
