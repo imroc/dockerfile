@@ -10,6 +10,10 @@ sleep 5
 while true
 do
   ipnow=`ALL_PROXY=socks5://127.0.0.1:40000 curl https://chat.openai.com/cdn-cgi/trace 2>/dev/null | grep ip= | awk -F = '{print $2}'`
+  if [[ "ipnow" == "" ]]; then
+    sleep 5
+    continue
+  fi
   echo "current ip is $ipnow, excluded ip is $EXCLUDE_IPS" >> /var/log/warp.log
 	found=false
 	for ip in "${ips_array[@]}"; do
