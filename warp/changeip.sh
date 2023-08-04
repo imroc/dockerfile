@@ -10,7 +10,7 @@ sleep 5
 while true
 do
   ipnow=`ALL_PROXY=socks5://127.0.0.1:40000 curl https://chat.openai.com/cdn-cgi/trace 2>/dev/null | grep ip= | awk -F = '{print $2}'`
-  if [[ "ipnow" == "" ]]; then
+  if [[ "$ipnow" == "" ]]; then
     sleep 5
     continue
   fi
