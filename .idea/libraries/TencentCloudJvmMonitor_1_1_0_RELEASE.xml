@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="TencentCloudJvmMonitor-1.1.0-RELEASE">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/test/consumer-demo/TencentCloudJvmMonitor-1.1.0-RELEASE.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
