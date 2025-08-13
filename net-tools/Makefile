@@ -8,7 +8,7 @@ docker-build: ## Build docker image with the manager.
 
 .PHONY: docker-push
 docker-push: ## Push docker image with the manager.
-	$(CONTAINER_TOOL) push ${IMG}
+	$(CONTAINER_TOOL) push ${IMAGE}
 
 .PHONY: docker-build-push
 docker-build-push: docker-build docker-push

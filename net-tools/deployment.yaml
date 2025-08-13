@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: net-debug
+  labels:
+    app: net-debug
+spec:
+  selector:
+    matchLabels:
+      app: net-debug
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/default-container: net-debug
+      labels:
+        app: net-debug
+    spec:
+      containers:
+      - name: net-debug
+        image: imroc/net-tools:latest
+        imagePullPolicy:
