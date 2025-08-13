@@ -9,9 +9,9 @@ RUN apt-get update -y && apt-get install -y \
   iputils-arping ethtool iptables nftables conntrack 
 
 # Install httpie
-RUN curl -SsL https://packages.httpie.io/deb/KEY.gpg | sudo gpg --dearmor -o /usr/share/keyrings/httpie.gpg \
-  echo "deb [arch=amd64 signed-by=/usr/share/keyrings/httpie.gpg] https://packages.httpie.io/deb ./" | tee /etc/apt/sources.list.d/httpie.list > /dev/null \
-  apt update \
+RUN curl -SsL https://packages.httpie.io/deb/KEY.gpg | sudo gpg --dearmor -o /usr/share/keyrings/httpie.gpg  && \
+  echo "deb [arch=amd64 signed-by=/usr/share/keyrings/httpie.gpg] https://packages.httpie.io/deb ./" | tee /etc/apt/sources.list.d/httpie.list > /dev/null && \
+  apt update -y && \
   apt install httpie -y
 
 # Cleanup cache
